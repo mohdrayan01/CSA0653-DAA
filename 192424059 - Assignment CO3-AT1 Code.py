@@ -25,11 +25,17 @@ def merge_sort(arr):
             arr[k] = right[j]
             j += 1
             k += 1
-arr = [38, 27, 43, 3, 9, 82, 10]
+n = int(input("Enter the number of elements: "))
+arr = []
+for i in range(n):
+    element = int(input(f"Enter element {i+1}: "))
+    arr.append(element)
 merge_sort(arr)
-print("Sorted Array:", arr, "\n")
+print("Sorted Array:", arr)
+print()
 
-# Question 2 
+
+# Question 2
 print("Question 2 Output:")
 def binary_search(arr, target):
     low = 0
@@ -45,7 +51,18 @@ def binary_search(arr, target):
         else:
             high = mid - 1
     return -1, count
-arr = list(range(1, 101))
-index, iterations = binary_search(arr, 85)
-print("Position:", index)
-print("Iterations:", iterations, "\n")
+n = int(input("Enter the number of elements in the sorted array: "))
+arr = []
+print("Enter the elements in sorted order:")
+for i in range(n):
+    element = int(input(f"Enter element {i+1}: "))
+    arr.append(element)
+target = int(input("Enter the element to search: "))
+index, iterations = binary_search(arr, target)
+if index != -1:
+    print("Element found at index:", index)
+    print("Iterations:", iterations)
+else:
+    print("Element not found")
+    print("Iterations:", iterations)
+print()
