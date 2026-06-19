@@ -10,8 +10,12 @@ def selection_sort(arr):
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
-arr = [64, 25, 12, 22, 11]
-print(selection_sort(arr))
+n = int(input("Enter the number of elements: "))
+arr = []
+for i in range(n):
+    element = int(input(f"Enter element {i+1}: "))
+    arr.append(element)
+print("Sorted Array:", selection_sort(arr))
 print("\n")
 
 # Question 2
@@ -25,7 +29,11 @@ def string_match(text, pattern):
         if j == m:
             return i
     return -1
-text="ABCDE"
-pattern="DE"
-print(string_match(text,pattern))
+text = input("Enter the text: ")
+pattern = input("Enter the pattern to search: ")
+result = string_match(text, pattern)
+if result != -1:
+    print("Pattern found at index:", result)
+else:
+    print("Pattern not found")
 print("\n")
